@@ -1,5 +1,7 @@
 #!/bin/bash
+
 source ./common.sh
+Check_Root
 cp mongo.repo /etc/yum.repos.d/mongodb.repo &>>$LOG_FILE
 VALIDATE $? "copying mongodb repo"
 
