@@ -1,11 +1,12 @@
 #!/bin/bash
 START_TIME=$(date +%s)
 source ./common.sh
+app_name=catalogue
 Check_Root
 app_setup
 nodejs_setup
 systemd_setup
-app_name=catalogue
+
 
 
 cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo &>>$LOG_FILE
