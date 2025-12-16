@@ -2,7 +2,7 @@
 
 source ./common.sh
 Check_Root
-app_name-mongodb
+app_name=mongodb
 cp mongo.repo /etc/yum.repos.d/mongodb.repo &>>$LOG_FILE
 VALIDATE $? "copying mongodb repo"
 
