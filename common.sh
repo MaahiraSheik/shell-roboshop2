@@ -34,6 +34,6 @@ VALIDATE(){
 Print_Time(){
     END_TIME=$(date +%s)
     TOTALTIME=($END_TIME-$START_TIME)
-    echo -e "script executed successfully, $Y tike taken: $TOTAL_TIME Seconds $N"
+    echo -e "script executed successfully, $Y tike taken: $TOTALTIME Seconds $N"
 }
 
