@@ -54,6 +54,7 @@ nodejs_setup(){
 
    dnf install nodejs -y &>>$LOG_FILE
    VALIDATE $? "Installling Nodejs:20"
+   
    npm install &>>$LOG_FILE
    VALIDATE $? "Installing dependencies"
 }
