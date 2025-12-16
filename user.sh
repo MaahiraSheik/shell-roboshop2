@@ -1,8 +1,8 @@
 #!/bin/bash
 
 START_TIME=$(date +%s)
-source ./common.sh
 app_name=user
+source ./common.sh
 Check_Root
 nodejs_setup
 app_setup
