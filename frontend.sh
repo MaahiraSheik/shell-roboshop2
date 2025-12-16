@@ -1,5 +1,5 @@
 #!/bin/bash
-
+START_TIME=$(date +%s)
 source ./common.sh
 Check_Root
 app_name=frontend
@@ -35,6 +35,8 @@ VALIDATE $? "Copying nginx.conf"
 
 systemctl restart nginx 
 VALIDATE $? "Restarting nginx"
+
+Print_Time
 
 # dnf module disable nginx -y &>>LOG_FILE
 # VALIDATE $? "disabling nginx"
