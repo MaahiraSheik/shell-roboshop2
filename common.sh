@@ -1,7 +1,7 @@
 #!/bin/bash
-check_Root
-{
-    USERID=$(id -u)
+
+START_TIME=$(date +%s)
+USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -12,7 +12,7 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
 echo "script started executing at: $(date)" &>>$LOG_FILE
-
+Check_Root(){
 if [ $USERID -ne 0 ]
 then
 echo -e "$R ERROR: please run with this root access $N" | tee -a $LOG_FILE
@@ -20,6 +20,7 @@ exit 1
 else
 echo "your is running with root access"  | tee -a $LOG_FILE
 fi
+}
 
 VALIDATE(){
     if [ $1 -eq 0 ]; then
@@ -29,4 +30,10 @@ VALIDATE(){
     exit 1
   fi
 }
+
+Print_Time(){
+    END_TIME=$(date +%s)
+    TOTALTIME=($END_TIME-$START_TIME)
+    echo -e "script executed successfully, $Y tike taken: $TOTAL_TIME Seconds $N"
 }
+
